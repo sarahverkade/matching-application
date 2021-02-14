@@ -1,0 +1,27 @@
+{
+  "name": "blok-tech",
+  "version": "1.0.0",
+  "description": "backend week 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahverkade/matching-application.git"
+  },
+  "author": "sarah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarahverkade/matching-application/issues"
+  },
+  "homepage": "https://github.com/sarahverkade/matching-application#readme",
+  "dependencies": {
+    "anymatch": "^3.1.1",
+    "camelcase": "^6.2.0"
+  },
+  "devDependencies": {
+    "karma": "^6.1.1",
+    "nodemon": "^2.0.7"
+  }
+}
