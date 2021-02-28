@@ -19,9 +19,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 // app listens to port 3000
 app.listen(3000);
 
-
+// This is a test 
 app.use("/home", (req, res, next) => {
-    res.render("home.ejs", { layout: false, users: users, title: "Users" }); // we dont need to use the extention express knows that we use pug templating engine
+    res.render("home.ejs", { layout: false, users: users, title: "Users" }); 
   });
 
 
