@@ -4,7 +4,7 @@
   "description": "backend week 1",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js" 
+    "test": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,11 @@
   "homepage": "https://github.com/sarahverkade/matching-application#readme",
   "dependencies": {
     "anymatch": "^3.1.1",
-    "camelcase": "^6.2.0"
+    "body-parser": "^1.19.0",
+    "camelcase": "^6.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "serve-static": "^1.14.1"
   },
   "devDependencies": {
     "karma": "^6.1.1",

@@ -1,0 +1,53 @@
+/* Remove all default styles */
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* When not selected, hide active icon images */
+header nav ul:last-of-type img{
+    display:none;
+}
+
+header ul{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:0em;
+    padding:0em;
+}
+
+li {
+    padding: .5em, 0em, 1em, 0em;
+}
+
+header img{
+    width:7vw;
+    height: 7vw;
+    padding: 1em;
+}
+
+/* Style all navigation states */
+
+
+header nav ul:last-of-type img:hover {
+    display: block;  
+   
+}
+
+header nav ul:first-of-type img:hover {
+    display: none;  
+}
+
+
+
+
+
+
