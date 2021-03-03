@@ -14,7 +14,7 @@ The preferences used in this feature are:
 
 The above preferences are used for selecting preferences in a dating app but feel free to change this data into whatever you need for your own application. 
 
-### How it works**
+### How it works
 
 This feature can be run locally with index.js using `port 3000`. Preferences can be filtered, updated and deleted using MogoDB.
 
@@ -35,25 +35,20 @@ When you download Node.js, Npm is automatically installed on your computer. Run 
 
 If you haven't already you can install the dependencies using the command line like so:
 
-- Npm 
-
+Install npm
 ``` bash
     npm install npm@latest -g
 ```
-
-- Express
-
+Install Express
 ```bash
     npm install express --save
 ```
-
-- Ejs
-
+Install Ejs
 ```bash
     npm install ejs
 ```
 
-- Body-parser
+Body-parser
 
 You will also need to have body-parser installed. Body-parser is a piece of Express middleware that is used to read HTTP POSTS. If you are not familiar with Body-parser here's some documentation <https://www.npmjs.com/package/body-parser>.<br>With Express 4.16+ Body-parser is built in so you won't have to install this package. 
 
