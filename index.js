@@ -26,9 +26,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 // app listens to port 3000
 app.listen(3000);
 
-
+// This is a test 
 app.use("/profile", (req, res, next) => {
     res.render("profile.ejs", { layout: false, users: users, title: "Users" }); 
+
   });
 
 app.get('/home', function (req, res) {
