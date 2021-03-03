@@ -25,33 +25,22 @@ For this feature to work you will need to have [Node.js][1] [npm][2], [Express][
 
 When you download Node.js, Npm is automatically installed on your computer. Run the following commands in your terminal to see if you have Node and npm installed. 
 
-```bash
-    node -v
-```
-
-``` bash
-    npm -v
-```
+Check version of Node.js `node -v`
+    
+Check version of Npm ` npm -v`
 
 If you haven't already you can install the dependencies using the command line like so:
 
-Install npm
-``` bash
-    npm install npm@latest -g
-```
-Install Express
-```bash
-    npm install express --save
-```
-Install Ejs
-```bash
-    npm install ejs
-```
+- Install npm `install npm@latest -g`
 
-Body-parser
+- Install Express `npm install express --save`
+
+- Install Ejs `npm install ejs`
+
+
+**Express Middleware** 
 
 You will also need to have body-parser installed. Body-parser is a piece of Express middleware that is used to read HTTP POSTS. If you are not familiar with Body-parser here's some documentation <https://www.npmjs.com/package/body-parser>.<br>With Express 4.16+ Body-parser is built in so you won't have to install this package. 
-
 
 
 [1]: https://nodejs.org/en/
