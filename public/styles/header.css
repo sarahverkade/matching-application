@@ -11,11 +11,6 @@ body {
     padding: 0;
 }
 
-/* When not selected, hide active icon images */
-header nav ul:last-of-type img{
-    display:none;
-}
-
 header ul{
     display:flex;
     flex-wrap: wrap;
@@ -34,17 +29,8 @@ header img{
     padding: 1em;
 }
 
-/* Style all navigation states */
 
 
-header nav ul:last-of-type img:hover {
-    display: block;  
-   
-}
-
-header nav ul:first-of-type img:hover {
-    display: none;  
-}
 
 
 

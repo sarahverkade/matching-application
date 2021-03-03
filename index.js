@@ -2,16 +2,23 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const path = require("path");
+
+
 const users = {
-    name: "sarah",
-    age: "25",
+    name: "Matthew",
+    age: "28",
   };
+
+
 
 // view engine ejs
 app.set('view engine', 'ejs')
 
+
 // access path public folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // middleware make data available in req.body (still figuring out)
 app.use(bodyParser.urlencoded({extended: true}))
@@ -20,16 +27,15 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.listen(3000);
 
 
-app.use("/home", (req, res, next) => {
-    res.render("home.ejs", { layout: false, users: users, title: "Users" }); // we dont need to use the extention express knows that we use pug templating engine
+app.use("/profile", (req, res, next) => {
+    res.render("profile.ejs", { layout: false, users: users, title: "Users" }); 
   });
-
 
 app.get('/home', function (req, res) {
     res.render('home.ejs');
   });
 
-app.get('/profile', function (req, res) {
+  app.get('/profile', function (req, res) {
     res.render('profile.ejs');
   });
 
