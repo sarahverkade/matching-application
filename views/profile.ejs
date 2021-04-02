@@ -1,30 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="sarah karamatali">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>matchingapp/profile</title>
-    <link href="styles/profile.css" rel="stylesheet" type="text/css" >
-</head>
-
-<body>
-    <header>
-        <%- include('partials/header') %>   
-    </header>
-    <main>
-    
-        <p><%= users.name %> <%= users.age %></p>
-
-       
-     
-    </main>
-
-    <footer>
-        <%- include('partials/footer') %>
-    </footer>
-
-</body>
-
-</html>
+ <!-- Include header main navigation -->
+ <%- include('partials/head') %>
+ <!-- form for adding a profile picture -->
+ <form method="post" action="/">
+    <label for="avatar">Add photo</label>
+    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+ </form>
+ <!-- name and occupation of user -->
+ <h1><%= users.name %>, <%= users.age %></h1>
+ <p>Model and personal trainer</p>
+ <!-- form for adding bio -->
+ <form>
+    <label for="description">Add Bio</label>
+    <textarea rows="5" cols="50" name="description" placeholder="Something about you..."></textarea>
+ </form>
+ <!-- form for adding media -->
+ <form method="post" action="/">
+    <label for="avatar">Add Media</label>
+    <input type="file" id="media" name="avatar" accept="image/png, image/jpeg">
+    <input type="file" id="media" name="avatar" accept="image/png, image/jpeg">
+    <input type="file" id="media" name="avatar" accept="image/png, image/jpeg">
+ </form>
+ <!-- form for adding preferences -->
+ <form method="post" action="/">
+    <label for="preference">Add Preferences</label>
+    <select>
+       <option value="no preference">No preference</option>
+       <option value="want kids">Want kids</option>
+       <option value="don't want kids">Don't want kids</option>
+       <input type="submit" value="save">
+    </select>
+ </form>
+ <!-- include footer bottom navigation -->
+ <%- include('partials/footer') %>
