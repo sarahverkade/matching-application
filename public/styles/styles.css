@@ -1,0 +1,285 @@
+/* CSS Document */
+*,
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+
+/* SOURCE FONTS https://freefontsfamily.com/futura-font-family-free/ */
+@font-face {
+    font-family: 'futuralight';
+    src: url('../fonts/futura_light_bt-webfont.woff2') format('woff2'), url('../fonts/futura_light_bt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Condensed';
+    src: url('../fonts/FuturaCondensedPlain.woff2') format('woff2'), url('FuturaCondensedPlain.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Remove all default styles */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+==========================================
+HEADER NAV
+==========================================
+*/
+
+header {
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+header ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0em;
+    padding: 1em;
+}
+
+header a {
+    color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header ul li:first-child a:link {
+    background-image: url(../images/home-icon.png);
+}
+
+header ul li:nth-child(2) a:link {
+    background-image: url(../images/profile-icon.png);
+
+}
+
+header ul li:nth-child(2) a:hover {
+    background-image: url(../images/profile-icon-active.png);
+}
+
+header ul li:last-child a:link {
+    background-image: url(../images/chat-icon.png);
+}
+
+/*
+==========================================
+ BODY MAIN
+==========================================
+*/
+
+body {
+    background: linear-gradient(0deg, rgba(105, 29, 82, .8) 0%, rgba(90, 14, 49, 1) 100%);
+    background-repeat: no-repeat;
+}
+
+/*
+==========================================
+ PROFILE PAGE 
+==========================================
+*/
+h1 {
+    font-family: Futuralight;
+    color: white;
+    letter-spacing: .15em;
+    font-size: 5vw;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 0em;
+}
+
+p {
+    font-family: futuralight;
+    text-align: center;
+    font-size: .9em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* styles form add profile photo */
+form:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: auto;
+    margin-bottom: 2em;
+    background-image: url(../images/add-media-icon.png);
+    background-size: 2em;
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 40vw;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0.1rem 0px 0.5rem 0.2rem;
+}
+
+form:first-of-type input[type=file] {
+    display: none;
+}
+
+form:first-of-type label {
+    padding-bottom: 3em;
+    padding-top: 3em;
+    font-family: Futuralight;
+    color: white;
+    font-size: .9em;
+    letter-spacing: .2em;
+}
+
+/* styles form add bio */
+form:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+form:nth-of-type(2) label {
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.5);
+    padding: 1em;
+    font-family: futuralight;
+    letter-spacing: .2em;
+    font-size: .9em;
+    color: white;
+}
+
+form:nth-of-type(2) textarea::placeholder {
+    font-family: futuralight;
+    letter-spacing: .2em;
+    font-size: .9em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+form:nth-of-type(2) textarea {
+    padding: 1em;
+    margin-top: 1em;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-style: none;
+    color: white;
+    font-family: futuralight;
+    font-size: .9em;
+}
+
+/* styles form add media */
+form:nth-of-type(3) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+form:nth-of-type(3) label {
+    flex-basis: 100%;
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.5);
+    padding: 1em;
+    font-family: futuralight;
+    letter-spacing: .2em;
+    font-size: .9em;
+    color: white;
+}
+
+form:nth-of-type(3) input[id=media] {
+    display: none;
+}
+
+form:nth-of-type(3) input[type=file] {
+    border-radius: 20%;
+    width: 6em;
+    height: 5em;
+    box-shadow: rgba(0, 0, 0, 0.3) 0.1rem 0px 0.5rem 0.2rem;
+}
+
+/* styles form add preferences */
+form:last-of-type {
+    display: flex;
+    flex-direction: column;
+    font-family: futuralight;
+    letter-spacing: .2em;
+    font-size: .9em;
+    color: rgba(255, 255, 255, 0.5);
+    border-style: none;
+    padding: 1em;
+}
+
+form:last-of-type label {
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.5);
+    padding: 1em;
+    color: white;
+}
+
+form:last-of-type select {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-style: none;
+    color: white;
+    font-family: futuralight;
+    letter-spacing: .2em;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+form:last-of-type input {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-style: none;
+    color: white;
+    font-family: Futura;
+    font-size: .9em;
+    letter-spacing: .2em;
+    padding: 1em;
+    margin-top: 1em;
+    width: 10em;
+    align-self: center;
+}
+
+form:last-of-type input:hover {
+    background-color: rgb(199, 15, 116);
+}
+
+/*
+==========================================
+HOME PAGE
+==========================================
+*/
+
+section p{
+    text-align: unset;
+
+}
+
+/*
+==========================================
+  FOOTER
+==========================================
+*/
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 1em;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: futuralight;
+    letter-spacing: .2em;
+    font-size: .9em;
+}
