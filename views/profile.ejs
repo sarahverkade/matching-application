@@ -1,34 +1,21 @@
- <!-- Include header main navigation -->
- <%- include('partials/head') %>
- <!-- form for adding a profile picture -->
- <form method="post" action="/">
-    <label for="avatar">Add photo</label>
-    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+ <!-- <%- include('partials/head') %> -->
+<form method="post" action="/">
+    <label for="avatar">
+       Add photo
+      </label>
+    <input type="file" id="avatar" name="name" accept="image/png, image/jpeg">
  </form>
- <!-- name and occupation of user -->
- <h1><%= users.name %>, <%= users.age %></h1>
+ <h1></h1>
  <p>Model and personal trainer</p>
- <!-- form for adding bio -->
  <form>
-    <label for="description">Add Bio</label>
-    <textarea rows="5" cols="50" name="description" placeholder="Something about you..."></textarea>
- </form>
- <!-- form for adding media -->
- <form method="post" action="/">
-    <label for="avatar">Add Media</label>
-    <input type="file" id="media" name="avatar" accept="image/png, image/jpeg">
-    <input type="file" id="media" name="avatar" accept="image/png, image/jpeg">
-    <input type="file" id="media" name="avatar" accept="image/png, image/jpeg">
- </form>
- <!-- form for adding preferences -->
- <form method="post" action="/">
-    <label for="preference">Add Preferences</label>
-    <select>
-       <option value="no preference">No preference</option>
-       <option value="want kids">Want kids</option>
-       <option value="don't want kids">Don't want kids</option>
-       <input type="submit" value="save">
-    </select>
- </form>
- <!-- include footer bottom navigation -->
- <%- include('partials/footer') %>
+    <label for="description">
+       Add Bio  
+    </label>
+    <textarea rows="5" 
+    cols="50" name="description" 
+    placeholder="Something about you...">
+   </textarea> 
+   
+
+ <h3></h3>
+

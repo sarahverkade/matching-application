@@ -1,0 +1,45 @@
+<% if (user) { %>
+   <form method="post" action="/create-interest" class="mt-4">
+       <% if (interest) { %>
+           <h4>Update your preference</h4>
+       <% } else { %>
+           <h4>Set your preference?</h4>
+       <% } %>
+       <div class="form-check mt-4">
+           <input class="form-check-input" type="radio" name="interest" value="yes" id="wantKids" required>
+           <label class="form-check-label" for="wantKids">
+               Want kids
+           </label>
+       </div>
+       <div class="form-check mt-2">
+           <input class="form-check-input" type="radio" name="interest" value="no" id="dontWantKids" required>
+           <label class="form-check-label" for="dontWantKids">
+               Don't want kids
+           </label>
+       </div>
+       <div class="form-check mt-2">
+           <input class="form-check-input" type="radio" name="interest" value="no-preference"
+                  id="noPreference" required>
+           <label class="form-check-label" for="noPreference">
+               No preference
+           </label>
+       </div>
+       <input type="submit" name="submit" value="Submit" class="mt-4 form-control btn-primary">
+   </form>
+   <div class="mt-4">
+       <h3>
+           <% if (interest) { %>
+               Your preference:
+           <% } %>
+           <% if (interest === "yes") { %>
+               You want kids
+           <% } else if (interest === "no") { %>
+               You dont want kids
+           <% } else if (interest === "no-preference") { %>
+               No preference
+           <% } %>
+       </h3>
+   </div>
+<% } %>
+<% if (interest) { %>
+   <a href="/delete-interest" class="btn-outline-primary">Delete interest</a>
