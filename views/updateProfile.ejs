@@ -1,12 +1,11 @@
 <%- include('partials/head.ejs') %>
-<form action="/profile" method="POST">
+
+<form action="/updateProfile" method="POST">
    <fieldset>
       <label for="name">Name</label>
       <input name="name" type="text" value=<%= userData.name %>>
       <label for="bio">Bio</label>
       <input name="bio" type="text" value=<%= userData.bio %>>
    </fieldset>
-   <input type="submit" value="Edit profile"/>
+   <input type="submit" value="Save"/>
 </form>
-
-<%- include('partials/footer.ejs') %>

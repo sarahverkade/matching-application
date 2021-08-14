@@ -1,28 +1,39 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require("mongodb").MongoClient;
 const app = express();
+const multer  = require("multer");
 const path = require("path");
-// const slug = require("slug");
+const port = 3000;
 
+/*
+========================
+Middleware
+========================
+*/
 
-// ========================
-// Middlewares
-// ========================
 app.set("view engine", "ejs");
+
 // Read data from body
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer({dest:__dirname+"/uploads/"}).any());
+
 // Access public folder
-app.use(express.static(path.join(__dirname, "public")));
+app.use("/public", express.static(path.join(__dirname, '/public')));
+app.use(express.static("public"));
 
 
-// ========================
-// Database connections
-// ========================
+/*
+========================
+Database connections
+========================
+*/
+
 // Use dontenv npm package 
 require("dotenv").config();
 // Access environment variables
 const dotenv = require("dotenv");
+
 
 // Process URI
 const uri = process.env.DB_URI;
@@ -34,70 +45,177 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 
+/*
+========================
+Routes
+========================
+*/
+
+app.get("/", function (req, res){
+  res.render("register");
+});
+
+app.get("/register", function (req, res){
+  res.render("register");
+});
+
+
+app.get("/login", function (req, res){
+  res.render("login");
+});
+
+
+app.get("/profile", function (req, res) {
+  res.render("profile");
+});
+
+
+app.get("/updateProfile", function (req, res){
+  res.render("updateProfile");
+});
+
+/*
+========================
+Connect to database
+========================
+*/
+
 async function main() {
   try {
       // Connect to the MongoDB cluster
       await client.connect();
-      app.listen(3000);
-      console.log("connected to mongo");
-      const db = client.db(dbName);
-      // Make the appropriate DB calls
-      await listDatabases(client);
-      await createUser(
-        client,
-        {
-          name: "matthew",
-          age: "28",
-          Preference: ""
-        }
-      );
+      db = await client.db(dbName);
+      console.log("connected to mongo"); 
       // catch error
   } catch (e) {
       console.error(e);
-  } //finally {
-      // Close the connection to the MongoDB cluster
-    // await client.close();
- // }
+  } 
 }
 
 main().catch(console.error);
 
-async function createUser(client, newUser){
-  const result = await client.db("preference").collection("user").insertOne(newUser);
-  console.log(` - ${newUser.preference}`);
-}
+/*
+========================
+User registration
+========================
+*/
 
-
-async function listDatabases(client){
-  databasesList = await client.db().admin().listDatabases();
-
-  console.log("Databases:");
-  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
-
-
-// ========================
-// Routes
-// ========================
-
-app.get("/preference", function (req, res) {
-  res.render("preferen.ejs");
+app.post("/register", async (req, res) => {
+  let x = 10; 
+  try {
+    const newUser = {
+    name: req.body.name, 
+    bio: req.body.bio, 
+    email: req.body.email, 
+    password: req.body.password,
+   _id: x.toString(), 
+    };
+    await db.collection("users").insertOne(newUser);
+    console.log(newUser);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    res.render("login");
+   
+  }
 });
 
-app.get("/profile", function (req, res) {
-  res.render("profile.ejs", { newUser: newUser.name });
+app.post("/login", async (req, res) => {
+  const userData = {
+  name: req.body.name,
+  bio: req.body.bio,
+  }; 
+  try {
+    getData = await db.collection("users").findOne({_id: "10"});
+  } catch (error) {
+    console.error(error);
+  } finally {
+    res.render("profile", {userData: getData,});
+  }
 });
 
-app.get("/matches", function (req, res) {
-  res.render("home.ejs");
+/*
+========================
+User profile 
+========================
+
+
+ app.get("/login", async (req, res) => {
+  const userData = {
+  name: req.body.name,
+  bio: req.body.bio,
+  }; 
+  try {
+    getData = await db.collection("users").findOne({_id: "10"});
+  } catch (error) {
+    console.error(error);
+  } finally {
+    res.render("profile", {userData: getData,});
+  }
 });
+
+*/
+
+/*
+========================
+Update profile
+========================
+
+*/
+app.post("/profile", async (req, res) => {
+  const userData = {
+    name: req.body.name,
+    bio: req.body.bio,
+    };  
+  try {
+    getData = await db.collection("users").findOne({_id: "10"});
+  } catch (error) {
+    console.error(error);
+  } finally {
+    res.render("updateProfile", {userData: getData,});
+  }
+});
+
+
+
+app.post("/updateProfile", async (req, res) => {
+  const userData = {
+    name: req.body.name,
+    bio: req.body.bio,
+    }; 
+  try {
+    getData = await db.collection("users").findOne({_id: "10"});
+    const filter = { name: req.body.name, bio: req.body.bio,};
+    const options = { upsert: true };
+    const updateDoc = {
+      $set: {
+        name: req.body.name,
+        bio: req.body.bio,
+      },
+    };
+    console.log(updateDoc);
+    await db.collection("users").updateOne(filter, updateDoc, options);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    res.redirect("profile", {userData: getData});
+  }
+});
+
+
+
+
+
+
+
+
 
 // Function error 404
-app.use(function (req, res, next) {
-  res.status(404).send("Sorry! This page doesn't exist");
+app.use(function error (req, res, next) {
+res.status(404).send("Sorry! This page doesn't exist");
 });
 
 
-
-
-
+app.listen(process.env.PORT || port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
