@@ -52,7 +52,7 @@ Routes
 */
 
 app.get("/", function (req, res){
-  res.render("register");
+  res.redirect("register");
 });
 
 app.get("/register", function (req, res){
@@ -65,14 +65,6 @@ app.get("/login", function (req, res){
 });
 
 
-app.get("/profile", function (req, res) {
-  res.render("profile");
-});
-
-
-app.get("/updateProfile", function (req, res){
-  res.render("updateProfile");
-});
 
 /*
 ========================
@@ -115,22 +107,18 @@ app.post("/register", async (req, res) => {
   } catch (error) {
     console.error(error);
   } finally {
-    res.render("login");
+    res.redirect("login");
    
   }
 });
 
 app.post("/login", async (req, res) => {
-  const userData = {
-  name: req.body.name,
-  bio: req.body.bio,
-  }; 
   try {
     getData = await db.collection("users").findOne({_id: "10"});
   } catch (error) {
     console.error(error);
   } finally {
-    res.render("profile", {userData: getData,});
+    res.redirect("profile");
   }
 });
 
@@ -138,9 +126,9 @@ app.post("/login", async (req, res) => {
 ========================
 User profile 
 ========================
+*/
 
-
- app.get("/login", async (req, res) => {
+ app.get("/profile", async (req, res) => {
   const userData = {
   name: req.body.name,
   bio: req.body.bio,
@@ -154,19 +142,30 @@ User profile
   }
 });
 
-*/
+app.post("/profile", async (req, res) => {
+  try {
+    getData = await db.collection("users").findOne({_id: "10"});
+  } catch (error) {
+    console.error(error);
+  } finally {
+    res.redirect("updateProfile");
+  }
+});
+
+
 
 /*
 ========================
 Update profile
 ========================
-
 */
-app.post("/profile", async (req, res) => {
+
+
+app.get("/updateProfile", async (req, res) => {
   const userData = {
-    name: req.body.name,
-    bio: req.body.bio,
-    };  
+  name: req.body.name,
+  bio: req.body.bio,
+  }; 
   try {
     getData = await db.collection("users").findOne({_id: "10"});
   } catch (error) {
@@ -177,16 +176,11 @@ app.post("/profile", async (req, res) => {
 });
 
 
-
 app.post("/updateProfile", async (req, res) => {
-  const userData = {
-    name: req.body.name,
-    bio: req.body.bio,
-    }; 
   try {
-    getData = await db.collection("users").findOne({_id: "10"});
-    const filter = { name: req.body.name, bio: req.body.bio,};
-    const options = { upsert: true };
+    const filter = {
+      _id: "10",
+    };
     const updateDoc = {
       $set: {
         name: req.body.name,
@@ -194,20 +188,13 @@ app.post("/updateProfile", async (req, res) => {
       },
     };
     console.log(updateDoc);
-    await db.collection("users").updateOne(filter, updateDoc, options);
+    await db.collection("users").updateOne(filter, updateDoc, opties);
   } catch (error) {
     console.error(error);
   } finally {
-    res.redirect("profile", {userData: getData});
+    res.redirect("profile");
   }
 });
-
-
-
-
-
-
-
 
 
 // Function error 404
