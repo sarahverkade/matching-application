@@ -1,5 +1,5 @@
 # matching-application
-Project-Tech  _multi-select dropdown_
+Project-Tech  - create and update account information 
 
 ## What is does
 Welcome. This feature allows users to register an account, login and update their account information. 
@@ -10,7 +10,7 @@ Welcome. This feature allows users to register an account, login and update thei
 This feature can be run locally with index.js using `port 3000`. 
 
 
-**Installs**
+**Installs - Packages**
 
 For this feature to work you will need to have [Node.js][1] [npm][2], [Express][3] and [Ejs][4] installed. 
 
@@ -28,10 +28,13 @@ If you haven't already you can install the dependencies using the command line l
 
 - Install Ejs `npm install ejs`
 
+**Installs - Database**
+
 For this project I am using MongoDB Atlas. In index.js I am using two variables to connect to the database. You need to use a .env file in which you store these variables and replace it with your own databse name and password. Below an example of how you need these variables declared in your personal .env file.
 
-DB_URI="mongodb+srv://<username>:<password>@backendapp.ehlwc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+```DB_URI="mongodb+srv://<username>:<password>@backendapp.ehlwc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 DB_NAME ="yourDatabaseNAme"
+```
 
 
 **Express Middleware** 
