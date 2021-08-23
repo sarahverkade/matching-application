@@ -32,7 +32,8 @@ If you haven't already you can install the dependencies using the command line l
 
 For this project I am using MongoDB Atlas. In index.js I am using two variables to connect to the database. You need to use a .env file in which you store these variables and replace it with your own databse name and password. Below an example of how you need these variables declared in your personal .env file.
 
-```DB_URI="mongodb+srv://<username>:<password>@backendapp.ehlwc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+```
+DB_URI="mongodb+srv://<username>:<password>@backendapp.ehlwc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 DB_NAME ="yourDatabaseNAme"
 ```
 
