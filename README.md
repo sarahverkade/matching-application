@@ -2,21 +2,12 @@
 Project-Tech  _multi-select dropdown_
 
 ## What is does
-Welcome. This feature allows users to filter their preferences using a multi-select dropdown. 
+Welcome. This feature allows users to register an account, login and update their account information. 
 
-The preferences used in this feature are:
-
-|preference|
-|:------------------:|
-|wanting kids|
-|not wanting kids|
-|no preference|
-
-The above preferences are used for selecting preferences in a dating app but feel free to change this data into whatever you need for your own application. 
 
 ### How it works
 
-This feature can be run locally with index.js using `port 3000`. Preferences can be filtered, updated and deleted using MogoDB.
+This feature can be run locally with index.js using `port 3000`. 
 
 
 **Installs**
@@ -37,6 +28,11 @@ If you haven't already you can install the dependencies using the command line l
 
 - Install Ejs `npm install ejs`
 
+For this project I am using MongoDB Atlas. In index.js I am using two variables to connect to the database. You need to use a .env file in which you store these variables and replace it with your own databse name and password. Below an example of how you need these variables declared in your personal .env file.
+
+DB_URI="mongodb+srv://<username>:<password>@backendapp.ehlwc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+DB_NAME ="yourDatabaseNAme"
+
 
 **Express Middleware** 
 
@@ -47,3 +43,4 @@ You will also need to have body-parser installed. Body-parser is a piece of Expr
 [2]: https://www.npmjs.com/
 [3]: https://expressjs.com/
 [4]: https://ejs.co/
+

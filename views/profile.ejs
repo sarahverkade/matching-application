@@ -1,5 +1,7 @@
 <%- include('partials/head.ejs') %>
-<form action="/profile" method="POST">
+<main>
+   <h2>Your profile</h2>
+<form class="profile" action="/profile" method="POST">
    <fieldset>
       <label for="name">Name</label>
       <input name="name" type="text" value=<%= userData.name %>>
@@ -8,5 +10,6 @@
    </fieldset>
    <input type="submit" value="Edit profile"/>
 </form>
+</main>
 
 <%- include('partials/footer.ejs') %>

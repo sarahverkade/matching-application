@@ -84,7 +84,7 @@ async function main() {
   } 
 }
 
-main().catch(console.error);
+main();
 
 /*
 ========================
@@ -188,7 +188,7 @@ app.post("/updateProfile", async (req, res) => {
       },
     };
     console.log(updateDoc);
-    await db.collection("users").updateOne(filter, updateDoc, opties);
+    await db.collection("users").updateOne(filter, updateDoc);
   } catch (error) {
     console.error(error);
   } finally {
@@ -204,5 +204,5 @@ res.status(404).send("Sorry! This page doesn't exist");
 
 
 app.listen(process.env.PORT || port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`listening at http://localhost:${port}`);
 });
