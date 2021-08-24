@@ -4,10 +4,7 @@ Project-Tech  - create and update account information
 ## What is does
 Welcome. This feature allows a user to register an account, login and update their account information. 
 
-<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/registerPage.png" width="150px">
-<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/LoginPage.png" width="150px">
-<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/profilePage.png" width="150px">
-<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/editProfilePage.png" width="150px">
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/registerPage.png" width="150px"> <img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/LoginPage.png" width="150px"> <img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/profilePage.png" width="150px"> <img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/editProfilePage.png" width="150px">
 
 <img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/wireframeApp.png" width="600">
 
