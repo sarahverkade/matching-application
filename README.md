@@ -1,33 +1,44 @@
-# matching-application
-Project-Tech  - create and update account information - designed to view on IPhone X
+# matching-application Registration and Login
+Project-Tech  - create and update account information 
 
-## What it does
-Welcome. This feature allows users to register an account, login and update their account information. 
+## What is does
+Welcome. This feature allows a user to register an account, login and update their account information. 
+
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/wireframeApp.png" width="600">
+
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/wireframeApp.png" width="300">
+
+See how the apps works on https://sarah-blok-tech.herokuapp.com/
+
+### Built with
+
+- [Node.js][1]
+- [npm][2]
+- [Express][3]
+- [Ejs][4]
 
 
+## Installation 
 
-### How it works
+For this feature to work you will need to have Node.js and Git installed. Type the following commands in your terminal for installation:
 
-This feature can be run locally with index.js using `port 3000`. 
+- Install node `node install`
+- Install Git `git install`
 
+### Clone this repo
 
-**Installs - Packages**
+``` git clone https://github.com/sarahverkade/matching-application.git```
 
-For this feature to work you will need to have [Node.js][1] [npm][2], [Express][3] and [Ejs][4] installed. 
+### Install NPM 
 
-When you download Node.js, Npm is automatically installed on your computer. Run the following commands in your terminal to see if you have Node and npm installed. 
+To use npm type in your terminal in the root of your directory: 
 
-Check version of Node.js `node -v`
-    
-Check version of Npm ` npm -v`
+``` npm install ```
 
-If you haven't already you can install the dependencies using the command line like so:
+### Run the App
 
-- Install npm `install npm@latest -g`
+This feature can be run locally with ``` npm start ``` using `port 3000`. 
 
-- Install Express `npm install express --save`
-
-- Install Ejs `npm install ejs`
 
 **Installs - Database**
 
@@ -38,7 +49,6 @@ DB_URI="mongodb+srv://<username>:<password>@backendapp.ehlwc.mongodb.net/myFirst
 DB_NAME ="yourDatabaseNAme"
 ```
 
-
 **Express Middleware** 
 
 You will also need to have body-parser installed. Body-parser is a piece of Express middleware that is used to read HTTP POSTS. If you are not familiar with Body-parser here's some documentation <https://www.npmjs.com/package/body-parser>.<br>With Express 4.16+ Body-parser is built in so you won't have to install this package. 
@@ -48,4 +58,3 @@ You will also need to have body-parser installed. Body-parser is a piece of Expr
 [2]: https://www.npmjs.com/
 [3]: https://expressjs.com/
 [4]: https://ejs.co/
-
