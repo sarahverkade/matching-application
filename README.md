@@ -2,31 +2,43 @@
 Project-Tech  - create and update account information 
 
 ## What is does
-Welcome. This feature allows users to register an account, login and update their account information. 
+Welcome. This feature allows a user to register an account, login and update their account information. 
+
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/wireframeApp.png" width="600">
+
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/wireframeApp.png" width="300">
+
+See how the apps works on https://sarah-blok-tech.herokuapp.com/
+
+### Built with
+
+- [Node.js][1]
+- [npm][2]
+- [Express][3]
+- [Ejs][4]
 
 
-### How it works
+## Installation 
 
-This feature can be run locally with index.js using `port 3000`. 
+For this feature to work you will need to have Node.js and Git installed. Type the following commands in your terminal for installation:
 
+- Install node `node install`
+- Install Git `git install`
 
-**Installs - Packages**
+### Clone this repo
 
-For this feature to work you will need to have [Node.js][1] [npm][2], [Express][3] and [Ejs][4] installed. 
+``` git clone https://github.com/sarahverkade/matching-application.git```
 
-When you download Node.js, Npm is automatically installed on your computer. Run the following commands in your terminal to see if you have Node and npm installed. 
+### Install NPM 
 
-Check version of Node.js `node -v`
-    
-Check version of Npm ` npm -v`
+To use npm type in your terminal in the root of your directory: 
 
-If you haven't already you can install the dependencies using the command line like so:
+``` npm install ```
 
-- Install npm `install npm@latest -g`
+### Run the App
 
-- Install Express `npm install express --save`
+This feature can be run locally with ``` npm start ``` using `port 3000`. 
 
-- Install Ejs `npm install ejs`
 
 **Installs - Database**
 
@@ -36,7 +48,6 @@ For this project I am using MongoDB Atlas. In index.js I am using two variables 
 DB_URI="mongodb+srv://<username>:<password>@backendapp.ehlwc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 DB_NAME ="yourDatabaseNAme"
 ```
-
 
 **Express Middleware** 
 
