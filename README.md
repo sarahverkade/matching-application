@@ -6,7 +6,10 @@ Welcome. This feature allows a user to register an account, login and update the
 
 <img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/wireframeApp.png" width="600">
 
-<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/wireframeApp.png" width="300">
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/registerPage.png" width="300">
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/loginPage.png" width="300">
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/profilePage.png" width="300">
+<img src="https://github.com/sarahverkade/matching-application/blob/main/public/images/editProfilePage.png" width="300">
 
 See how the apps works on https://sarah-blok-tech.herokuapp.com/
 
