@@ -1,8 +1,9 @@
 # matching-application
-Project-Tech  - create and update account information 
+Project-Tech  - create and update account information - designed to view on IPhone X
 
-## What is does
+## What it does
 Welcome. This feature allows users to register an account, login and update their account information. 
+
 
 
 ### How it works

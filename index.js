@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer({dest:__dirname+"/uploads/"}).any());
 
 // Access public folder
-app.use("/public", express.static(path.join(__dirname, '/public')));
+app.use("/public", express.static(path.join(__dirname, "/public")));
 app.use(express.static("public"));
 
 
@@ -31,11 +31,11 @@ Database connections
 
 // Use dontenv npm package 
 require("dotenv").config();
-// Access environment variables
+// Access environment variables 
 const dotenv = require("dotenv");
 
 
-// Process URI
+// Process URI variables for database connection
 const uri = process.env.DB_URI;
 const dbName = process.env.DB_NAME;
 

@@ -129,26 +129,11 @@ form textarea {
     font-size: .9em;
 }
 
-/* styles form add profile photo 
-
-form input[id=media] {
-    display: none;
-}
-form input[type=file] {
-    border-radius: 20%;
-    width: 6em;
-    height: 5em;
-    box-shadow: rgba(0, 0, 0, 0.3) 0.1rem 0px 0.5rem 0.2rem;
-}
-*/
-
 form {
-    /*display: flex;*/
     flex-direction: column;
     align-items: center;
     color: rgba(255, 255, 255, 0.5);
     border-style: none;
-    /*padding: 1em;*/
     margin: auto;
     margin-top: 2em;
 }
